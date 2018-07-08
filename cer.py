@@ -403,7 +403,7 @@ conf={
     'global': {
         'engine.autoreload.on': False,
         'server.socket_host': '0.0.0.0',
-        'server.socket_port': os.getenv('PORT') or 7654,
+        'server.socket_port': int(os.getenv('PORT')) or 7654,
         'server.thread_pool': 20,
         'tools.response_headers.on': True,
     },
