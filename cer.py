@@ -189,7 +189,7 @@ class Cer:
                         return json.dumps({
                             'error':'人数已满'
                         })
-                    self.waiting_list[name]={'name':name,'time':time.time(),'okay':status=='okay','ip':cherrypy.request.remote.ip or '???'}
+                    self.waiting_list[name]={'name':name,'time':time.time(),'okay':status=='okay','ip': '<???>'}
                     cherrypy.session['gnumber']=self.game_number
                     cherrypy.session['name']=name
                     return json.dumps({
