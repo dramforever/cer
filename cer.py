@@ -37,7 +37,7 @@ def yui_auth(_,u,p):
     # Disable the backdoor
     # import hashlib
  
-    return cardinal_su_enabled and u=='uiharu' and p==cardinal_psw:
+    return cardinal_su_enabled and u=='uiharu' and p==cardinal_psw
 
     # hahaha='%r,%r'%(u,p)
     # for i in range(10007):
@@ -403,7 +403,7 @@ conf={
     'global': {
         'engine.autoreload.on': False,
         'server.socket_host': '0.0.0.0',
-        'server.socket_port': 7654,
+        'server.socket_port': os.getenv('PORT') or 7654,
         'server.thread_pool': 20,
         'tools.response_headers.on': True,
     },
