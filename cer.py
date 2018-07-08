@@ -406,6 +406,7 @@ conf={
         'server.socket_port': int(os.getenv('PORT')) or 7654,
         'server.thread_pool': 20,
         'tools.response_headers.on': True,
+        'tools.proxy.on': True
     },
     '/': {
         'tools.sessions.on': True,
